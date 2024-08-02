@@ -1,0 +1,202 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background-image: url('./img/uu.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+
+/* Estilo para o cabeçalho */
+header {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
+
+header h1 {
+    font-family: 'Poppins';
+    color: #fff; /* Cor do texto */
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Sombra no texto para melhor contraste */
+}
+
+/* Container do carrossel */
+.carousel {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    /* Centraliza o carrossel horizontalmente */
+}
+
+/* Container que limita a visualização de um card por vez */
+.card-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.card-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    /* Suaviza o movimento do carrossel */
+}
+
+/* Estilo do card */
+.card {
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    height: 400px;
+    flex: 0 0 100%;
+    /* Faz com que cada cartão ocupe 100% da largura do container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    /* Inclui padding e border na largura total */
+    display: flex;
+    /* Usado para centralizar o conteúdo */
+    flex-direction: column;
+    /* Alinha o conteúdo verticalmente */
+    justify-content: center;
+    /* Centraliza o conteúdo verticalmente */
+    align-items: center;
+    /* Centraliza o conteúdo horizontalmente */
+    overflow: hidden;
+    /* Garante que a imagem aumentada não saia do card */
+}
+
+.card img {
+    width: 100%;
+    /* Ajusta a largura da imagem */
+    height: auto;
+    /* Ajusta a altura da imagem para manter a proporção */
+    max-width: 250px;
+    /* Limita a largura máxima da imagem */
+    max-height: 200px;
+    /* Limita a altura máxima da imagem */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    /* Espaço entre a imagem e o botão */
+    transition: transform 0.3s ease;
+    /* Suaviza o efeito de zoom */
+}
+
+.card img:hover {
+    transform: scale(1.1);
+    /* Aumenta a imagem em 10% */
+}
+
+button.prev,
+button.next {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+
+button.prev {
+    left: 10px;
+    /* Posiciona o botão à esquerda */
+}
+
+button.next {
+    right: 10px;
+    /* Posiciona o botão à direita */
+}
+
+button.prev:hover,
+button.next:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    font-family: "Poppins";
+    color: #333;
+    font-size: 1.5rem;
+    /* Tamanho da fonte do título */
+}
+
+.btn {
+    font-family: "Poppins";
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 480px) {
+
+
+    .card img {
+        max-width: 140px;
+        /* Reduz ainda mais a largura máxima da imagem */
+        max-height: 110px;
+        /* Reduz ainda mais a altura máxima da imagem */
+    }
+}
+
+.description {
+    font-family: 'Poppins', sans-serif;
+    color: #fff; /* Cor do texto */
+    font-size: 1.1rem; /* Tamanho da fonte da descrição */
+    margin: 10px 0 0 0; /* Margem superior para separar do título */
+    padding: 0;
+    max-width: 80%; /* Limita a largura do parágrafo */
+    margin-left: auto;
+    margin-right: auto; /* Centraliza o parágrafo */
+    line-height: 1.5; /* Aumenta a altura da linha para melhor legibilidade */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra no texto para melhor contraste */
+}
+
+@media (max-width: 566px) {
+
+    header h1{
+        font-size: 20px;
+    }
+
+
+    .description {
+        font-size: 13px;
+    }
+}
